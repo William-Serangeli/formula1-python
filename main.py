@@ -30,7 +30,7 @@ def yellow_flag():
 def green_flag():
         print("###     resume racing     ###")
 def eventrandomizer():
-        events = [crash,overtake,closing,causing_an_accident]
+        events = [crash,overtake,closing,penalty]
         random.choice(events)()
 def crash():
         x = (random.choice(numbers))
