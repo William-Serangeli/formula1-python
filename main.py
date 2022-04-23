@@ -1,3 +1,4 @@
+## 1.1 beta 
 import random
 import time
 otstatus = ["fails","succedes"]
@@ -37,6 +38,7 @@ def crash():
         del starting_grid[x]
         del numbers[-1]
         print("now we just have ",len(starting_grid)," cars on the grids ")
+        fcy()
 def overtake():
         succes = "succedes"
         fail = "fails"
