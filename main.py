@@ -278,8 +278,9 @@ def causing_an_accident():
         z = x+1
         if multiple1 == yes:
                 print(starting_grid[x], " has now a  ", time," seconds penalty for causing an accident with", starting_grid[y],"who is now out of the race")
-                del starting_grid[x]
+                del starting_grid[y]
                 del numbers[-1]
+                print("now there are just",len(starting_grid))
                 fcy()
         print (starting_grid[x], " has now a  ", time," seconds penalty for causing an accident with", starting_grid[y])
         append2 =(starting_grid[x],time," seconds - causing an accident ")
