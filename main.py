@@ -1,4 +1,4 @@
-## 1.2 beta
+## 1.3 beta
 # randomized attack attempt when closing the gap
 # random dialogs
 # reduced probability of crash and penalties instead of overtakes and other events
@@ -45,7 +45,18 @@ def yellow_flag():
         print(" ")
         time.sleep(5)
         green_flag()
-        
+def spin():
+        yes = " "
+        no = " "
+        possibilities = [yes,no]
+        box = random.choice(possibilities)
+        num = range(1,13)
+        x = (random.choice(num))
+        a = [1,2,3]
+        z = random.choice(a)
+        y = (x+z)
+        msg1 = "spin's but manages to re enter the track and continue the race"
+        print(starting_grid[x],msg1)        
 def green_flag():
         now = datetime.now()
         today = date.today()
@@ -58,7 +69,7 @@ def green_flag():
         print("###      GREEN FLAG       ###")
         print("###     resume racing     ###")
 def eventrandomizer():
-        events = [crash,overtake,closing,penalty,overtake,closing,overtake,closing]
+        events = [crash,overtake,closing,penalty,overtake,closing,overtake,closing,spin]
         random.choice(events)()
 def crash():
         x = (random.choice(numbers))
@@ -256,13 +267,22 @@ def track_limits():
         race_report.append(current_time)
         race_report.append(append2)
 def causing_an_accident():
+        yes = " "
+        no = " "
+        multiple = [yes,no,no,]
+        multiple1 = random.choice(multiple)
         seconds = [5,10,20]
         time = random.choice(seconds)
         x = random.choice(numbers)
         y = x-1
         z = x+1
+        if multiple1 == yes:
+                print(starting_grid[x], " has now a  ", time," seconds penalty for causing an accident with", starting_grid[y],"who is now out of the race")
+                del starting_grid[x]
+                del numbers[-1]
+                fcy()
         print (starting_grid[x], " has now a  ", time," seconds penalty for causing an accident with", starting_grid[y])
-        append2 =(time," seconds - causing an accident ")
+        append2 =(starting_grid[x],time," seconds - causing an accident ")
         allpen.append(starting_grid[x])
         allpen.append(append2)
         now = datetime.now()
@@ -336,6 +356,25 @@ def race():
     time.sleep(5)
     eventrandomizer()
     time.sleep(5)
+    eventrandomizer()
+    time.sleep(5)
+    eventrandomizer()
+    time.sleep(5)
+    eventrandomizer()
+    time.sleep(5)
+    eventrandomizer()
+    time.sleep(5)
+    eventrandomizer()
+    time.sleep(5)
+    eventrandomizer()
+    time.sleep(5)
+    eventrandomizer()
+    time.sleep(5)
+    eventrandomizer()
+    time.sleep(5)
+    eventrandomizer()
+    time.sleep(5)
+    
     endrace()
 def endrace():
         final_grid=(starting_grid)
@@ -393,3 +432,4 @@ def saverace_report():
         print(" ")
         print("###########################################")
         print("race report saved") 
+
